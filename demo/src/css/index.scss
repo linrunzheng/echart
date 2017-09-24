@@ -1,0 +1,22 @@
+html,
+body,
+#container{
+	width: 100%;
+	height: 100%;
+}
+#container{	
+  /* background: url('../img/bg.png') no-repeat center/cover; */
+    background:rgba(32,32,99,0.5);
+    .area{
+    	width: 50%;
+    	height: 50%;
+    	float: left;
+    	padding: 10px;
+    	box-sizing: border-box;
+    	>div{
+    		border: 1px solid #ddd;
+    		width: 100%;
+    		height: 100%;
+    	}
+    }
+}
