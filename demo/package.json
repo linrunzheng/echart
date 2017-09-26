@@ -35,6 +35,7 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "echarts": "^3.7.1",
-    "jquery": "^1.12.4"
+    "jquery": "^1.12.4",
+    "mockjs": "^1.0.1-beta3"
   }
 }

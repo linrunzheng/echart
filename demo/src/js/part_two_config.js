@@ -134,7 +134,7 @@ export const DEVICE_HEALTH_TREND_CONFIG = {
     series: [{
         type: 'bar',
         barWidth: '25',
-        data: [7000, 1200, 5000, 3000, 2000, 6000, 5600, 3333, 5012, 9000],
+        data: [],
         itemStyle: {
             normal: {
                 color: '#356da9',
