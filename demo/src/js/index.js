@@ -4,7 +4,10 @@ import '../css/reset.scss'
 import '../css/index.scss'
 
 $(function(){
-	$("#area3").load("./part_one.html")
+
+	$("#device-manage").load("./part_one.html");
+
+	$("#device-health").load("./part_two.html");
 })
 
 

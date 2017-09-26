@@ -241,25 +241,10 @@ export var ALARM_COUNT_CONFIG = function(chart, data) {
             orient: "vertical",
             left: "0%",
             top: "0%",
-            data: [{
-                    name: "通知",
-                    textStyle: {
-                        color: "#fff"
-                    },
-                },
-                {
-                    name: "轻微",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                },
-                {
-                    name: "严重",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                }
-            ]
+            textStyle: {
+                color: "#fff"
+            },
+            data: [ "通知","轻微", "严重"],
         },
         series
     }

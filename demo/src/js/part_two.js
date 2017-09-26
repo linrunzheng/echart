@@ -36,8 +36,9 @@ $(function(){
 
     DEVICE_HEALTH_TREND_CHART.setOption(DEVICE_HEALTH_TREND_CONFIG);
     DEVICE_ALARM_COUNT_CHART.setOption(ALARM_COUNT_CONFIG(DEVICE_ALARM_COUNT_CHART,[
-       {name:"通知",rate:15},
+       {name:"通知",rate:22},
        {name:"轻微",rate:55},
-       {name:"严重",rate:82}
+       {name:"严重",rate:88}
     ]));
 })
+

@@ -16,7 +16,7 @@ var entry = {};
 
 
 var plugins = [
-  /*  new webpack.HotModuleReplacementPlugin(),*/
+   new webpack.HotModuleReplacementPlugin(),
     new CleanWebpackPlugin(['dist']),
     extractSass,   
 
@@ -61,7 +61,7 @@ module.exports = {
 
     devServer: {
         open: true,
-     /*   hot:true*/
+        hot:true
     },
     module: {
         rules: [{
