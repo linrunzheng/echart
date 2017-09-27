@@ -11,6 +11,37 @@ import {
 	ALARM_COUNT_CONFIG
 } from './part_two_config.js'  
 
+Mock.mock('/getChartData', {
+    code:"s",
+    data:{
+        "onlineTime|24": [
+            {
+                "value|+1": 0
+            }
+        ],
+        "onlineValue|24": [
+            {
+                "value|1-200": 200
+            }
+        ],
+        "healthRrend|24": [10000*Math.random()],  
+        "alarmTime":[
+            {
+                "name":"通知",
+                "rate|1-100":1
+            },
+            {
+                "name":"轻微",
+                "rate|1-100":1
+            },
+            {
+                "name":"严重",
+                "rate|1-100":1
+            }
+        ]                          
+    }        
+});
+
 $(function(){
 	const DEVICE_ONLINE_TIME_CHART=echarts.init(document.querySelector("#device_online_time"));
 	const DEVICE_HEALTH_TREND_CHART=echarts.init(document.querySelector("#device_health_trend"));
@@ -19,39 +50,6 @@ $(function(){
     DEVICE_ONLINE_TIME_CHART.setOption(DEVICE_ONLINE_TIME_CONFIG);
     DEVICE_HEALTH_TREND_CHART.setOption(DEVICE_HEALTH_TREND_CONFIG);
    
-
-    Mock.mock('/getChartData', {
-        code:"s",
-        data:{
-            "onlineTime|24": [
-                {
-                    "value|+1": 0
-                }
-            ],
-            "onlineValue|24": [
-                {
-                    "value|1-200": 200
-                }
-            ],
-            "healthRrend|24": [10000*Math.random()],  
-            "alarmTime":[
-                {
-                    "name":"通知",
-                    "rate|1-100":1
-                },
-                {
-                    "name":"轻微",
-                    "rate|1-100":1
-                },
-                {
-                    "name":"严重",
-                    "rate|1-100":1
-                }
-            ]                          
-        }        
-    });
-
-
 
     $.ajax({
         url:'/getChartData',
