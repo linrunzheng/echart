@@ -372,95 +372,97 @@ export var WORKING_RATE = function(chart,data) {
 }
 
 /*激活比例配置*/
-export const ACTIVATE_RATE = {
-    title: {
-        text: '激活比例',
-        left: "center",
-        textStyle: {
-            color: "#fff",
-            fontSize: 20
-        }
-    },
-    legend: {
-        orient: "vertical",
-        left: "8%",
-        top: "15%",
-        data: [{
-                name: "未激活设备",
-                textStyle: {
-                    color: "#fff"
-                },
-            },
-            {
-                name: "已激活设备",
-                textStyle: {
-                    color: "#fff"
-                }
-            }
-        ]
-    },
-    series: [{
-        type: 'pie',
-        radius: '55%',
-        center: ['50%', '60%'],
-        selectedMode: 'single',
-        selectedOffset: -5,
-        label: {
-            normal: {
-                position: 'inside',
-                formatter: "{d}%"
+export var ACTIVATE_RATE = function(data){
+    return {
+        title: {
+            text: '激活比例',
+            left: "center",
+            textStyle: {
+                color: "#fff",
+                fontSize: 20
             }
         },
-        data: [{
-            value: 10,
-            name: '未激活设备',
-            selected: true,
-            itemStyle: {
-                normal: {
-                    color: {
-                        type: 'linear',
-                        x: 0,
-                        y: 0,
-                        x2: 0,
-                        y2: 1,
-                        colorStops: [{
-                            offset: 0,
-                            color: '#6c3b72'
-                        }, {
-                            offset: 1,
-                            color: '#8c5e8d'
-                        }],
-                    }
+        legend: {
+            orient: "vertical",
+            left: "8%",
+            top: "15%",
+            data: [{
+                    name: "未激活设备",
+                    textStyle: {
+                        color: "#fff"
+                    },
                 },
-
-            }
-        }, {
-            value: 90,
-            name: '已激活设备',
+                {
+                    name: "已激活设备",
+                    textStyle: {
+                        color: "#fff"
+                    }
+                }
+            ]
+        },
+        series: [{
+            type: 'pie',
+            radius: '55%',
+            center: ['50%', '60%'],
+            selectedMode: 'single',
+            selectedOffset: -5,
             label: {
                 normal: {
-                    fontSize: 20
+                    position: 'inside',
+                    formatter: "{d}%"
                 }
             },
-            itemStyle: {
-                normal: {
-                    color: {
-                        type: 'radial',
-                        x: 0.5,
-                        y: 0.5,
-                        r: 0.4,
-                        colorStops: [{
-                            offset: 0,
-                            color: '#af4bd5'
-                        }, {
-                            offset: 1,
-                            color: '#8324d2'
-                        }]
+            data: [{
+                value: 100-data,
+                name: '未激活设备',
+                selected: true,
+                itemStyle: {
+                    normal: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0,
+                                color: '#6c3b72'
+                            }, {
+                                offset: 1,
+                                color: '#8c5e8d'
+                            }],
+                        }
+                    },
+
+                }
+            }, {
+                value: data,
+                name: '已激活设备',
+                label: {
+                    normal: {
+                        fontSize: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: {
+                            type: 'radial',
+                            x: 0.5,
+                            y: 0.5,
+                            r: 0.4,
+                            colorStops: [{
+                                offset: 0,
+                                color: '#af4bd5'
+                            }, {
+                                offset: 1,
+                                color: '#8324d2'
+                            }]
+                        }
                     }
                 }
-            }
+            }]
         }]
-    }]
+    }
 };
 
 
@@ -498,13 +500,6 @@ export const IMPORT_RATE = {
             }
         },
         indicator: [
-            { name: '一月', max: 50000 },
-            { name: '二月', max: 50000 },
-            { name: '三月', max: 50000 },
-            { name: '四月', max: 50000 },
-            { name: '五月', max: 50000 },
-            { name: '六月', max: 50000 },
-            { name: '七月', max: 50000 },
         ],
         center: ['50%', '60%'],
         radius: 88
@@ -528,8 +523,6 @@ export const IMPORT_RATE = {
         },
         symbol: "circle",
         symbolSize: 10,
-        data: [{
-            value: [4300, 10000, 28000, 35000, 50000, 19000],
-        }]
+       
     }]
 }

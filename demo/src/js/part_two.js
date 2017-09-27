@@ -20,10 +20,14 @@ $(function(){
     DEVICE_HEALTH_TREND_CHART.setOption(DEVICE_HEALTH_TREND_CONFIG);
    
 
-    Mock.mock('/online_time', {
+    Mock.mock('/getChartData', {
         code:"s",
         data:{
-            "onlineTime|24": [1],
+            "onlineTime|24": [
+                {
+                    "value|+1": 0
+                }
+            ],
             "onlineValue|24": [
                 {
                     "value|1-200": 200
@@ -50,7 +54,7 @@ $(function(){
 
 
     $.ajax({
-        url:'/online_time',
+        url:'/getChartData',
         success:function(res){
            res=JSON.parse(res);
            if(res.code=="s"){
