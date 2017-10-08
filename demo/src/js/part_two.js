@@ -1,6 +1,8 @@
 import $ from "jquery"
 import echarts from 'echarts'
 import Mock from 'mockjs'
+import {$$,$id} from './util.js'
+
 
 import '../css/reset.scss'
 import '../css/part_two.scss'
@@ -24,7 +26,7 @@ Mock.mock('/getChartData', {
                 "value|1-200": 200
             }
         ],
-        "healthRrend|24": [10000*Math.random()],  
+        "healthRrend|10": [10000*Math.random()],  
         "alarmTime":[
             {
                 "name":"通知",
@@ -43,9 +45,9 @@ Mock.mock('/getChartData', {
 });
 
 $(function(){
-	const DEVICE_ONLINE_TIME_CHART=echarts.init(document.querySelector("#device_online_time"));
-	const DEVICE_HEALTH_TREND_CHART=echarts.init(document.querySelector("#device_health_trend"));
-	const DEVICE_ALARM_COUNT_CHART=echarts.init(document.querySelector("#device_alarm_count"));
+	const DEVICE_ONLINE_TIME_CHART=echarts.init($id("device_online_time"));
+	const DEVICE_HEALTH_TREND_CHART=echarts.init($id("device_health_trend"));
+	const DEVICE_ALARM_COUNT_CHART=echarts.init($id("device_alarm_count"));
 
     DEVICE_ONLINE_TIME_CHART.setOption(DEVICE_ONLINE_TIME_CONFIG);
     DEVICE_HEALTH_TREND_CHART.setOption(DEVICE_HEALTH_TREND_CONFIG);
@@ -56,7 +58,6 @@ $(function(){
         success:function(res){
            res=JSON.parse(res);
            if(res.code=="s"){
-            console.log(res)
                 DEVICE_ONLINE_TIME_CHART.setOption({
                     xAxis: {           
                         data:res.data.onlineTime
@@ -77,21 +78,33 @@ $(function(){
                 });
 
                 DEVICE_ALARM_COUNT_CHART.setOption(ALARM_COUNT_CONFIG(DEVICE_ALARM_COUNT_CHART,res.data.alarmTime));
+                
+                return function(){
+                     $$('.pie').forEach(function(pie) {
+                        var p = parseFloat(pie.textContent);
+                        var NS = "http://www.w3.org/2000/svg";
+                        var svg = document.createElementNS(NS, "svg");
+                        var circle = document.createElementNS(NS, "circle");
+                        var title = document.createElementNS(NS, "title");
+                        
+                        circle.setAttribute("r", 16);
+                        circle.setAttribute("cx", 16);
+                        circle.setAttribute("cy", 16);
+                        circle.setAttribute("stroke-dasharray", p + " 100");
+                        
+                        svg.setAttribute("viewBox", "0 0 32 32");
+                        title.textContent = pie.textContent;
+                        pie.textContent = '';
+                        svg.appendChild(title);
+                        svg.appendChild(circle);
+                        pie.appendChild(svg);
+                    }); 
+                }();
             }          
         }
-    })
-
- 
+    })   
 
 
-
-   
-
-
-	
-   
-
-   
-    
+     
 })
 

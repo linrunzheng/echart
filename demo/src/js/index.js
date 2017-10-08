@@ -4,10 +4,9 @@ import '../css/reset.scss'
 import '../css/index.scss'
 
 $(function(){
-
-	$("#device-manage").load("./part_one.html");
-
-	$("#device-health").load("./part_two.html");
+	$("#device-manage").load($("#device-manage").attr("address"));
+	$("#device-health").load($("#device-health").attr("address"));
+	
 })
 
 

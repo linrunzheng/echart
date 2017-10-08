@@ -13,7 +13,7 @@ export const DEVICE_ONLINE_TIME_CONFIG = {
         top: "20%",
         left: "10%",
         right: "5%",
-        bottom: "18%",
+        bottom: "20%",
     },
     xAxis: {
         type: 'category',
@@ -97,10 +97,10 @@ export const DEVICE_HEALTH_TREND_CONFIG = {
         top: "20%",
         left: "10%",
         right: "5%",
-        bottom: "18%",
+        bottom: "20%",
     },
     xAxis: {
-        data: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", ],
+        data: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月"],
         offset: 10,
         axisLabel: {
             textStyle: {

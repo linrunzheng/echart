@@ -5,7 +5,8 @@ body,
     height: 100%;
 }
 #watch_device_health{
-    padding-top: 50px;
+    padding-top: 80px;
+    padding-bottom: 25px;
     box-sizing: border-box;
     background: url('../img/bg.png') no-repeat center/cover; 
     overflow: hidden;
@@ -18,21 +19,218 @@ body,
     .content_left {
         width: 58%;
         height: 100%;
+        overflow-y: scroll;
+        padding: 5px 12px;
+        box-sizing: border-box;
+        >div{
+            box-shadow:0 0 8px rgba(0,173,255,0.8) inset;
+            border-radius: 6px;
+            padding: 0 5px;
+        }
     }
 
     .content_right {
         width: 42%;
         height: 100%;
+        box-sizing: border-box;
+        padding: 0 12px;
         >div{
             width:100%;
             height:33.33%;
-            padding:15px;
+            padding:5px;
             box-sizing: border-box;
             >div{
-                border:1px solid #fff;
                 height: 100%;
+                border-radius: 6px;
+                box-shadow:0 0 8px rgba(0,173,255,0.8) inset;
             }
         }
     }
+}
+
+.deviceList li{
+    padding: 15px;
+    float:left;
+    width: 50%;
+    box-sizing:border-box;
+    .device{
+        box-shadow:-1px -1px 30px rgba(0,173,255,0.8) inset;
+        border-radius: 8px;
+        height: 100%;
+        background:rgba(0,36,66,0.5) ;
+        &_top{
+            position: relative;
+            padding-left:38%;
+            .device_img{
+                width:35%;
+                height: 100px;
+                position: absolute;
+                top:50%;
+                left:2%;
+                margin-top: -50px;
+                background:url(../img/products.png) no-repeat center/cover;
+            }
+            .device_detail{
+                color:#fff;
+                font-size: 13px;
+                padding:2% 0 2% 5%;
+                p{
+                    margin-bottom:8px;
+                }
+            }
+        }   
+        &_middle{
+            >div{
+                float: left;
+                width: 33.33%;
+                p{
+                    text-align: center;
+                    margin-bottom: 10px;
+                    font-size: 14px;
+                }
+            }
+            &_repair{
+                p{
+                    color:#02147d;
+                }
+            }
+            &_health{
+                text-align: center;
+                p{
+                    color:#33af2a;
+                    &.pie{
+                        margin-top: -5%;
+                    }
+                }
+            }
+
+            &_alarm{
+                p{
+                    color:#b24d1f;
+                }
+            }
+
+        }  
+        &_bottom{
+            >div{
+                line-height: 1;
+                margin-bottom: 4px;
+                font-size: 14px;
+                >span{
+                    color: #bbb;
+                    vertical-align: middle;
+                    font-size: 14px;
+                }
+            }
+            
+            &_type{
+                float: left;
+                margin-left: 4%;
+
+            }
+            &_rate{
+                float: right;
+                margin-right: 10%;
+            }
+            &_progress{
+                display:block;
+                background:rgba(13,62,103,0.45);
+                margin: 0 22%;
+                border-radius: 10px;
+                padding:2px 4px;
+                box-sizing:border-box;
+                strong{
+                    height: 15px;
+                    background:#f54522;
+                    width: 33%;
+                    display: inline-block;
+                    border-radius: 10px;
+                    padding:2px 4px;
+                    box-sizing:border-box;
+                    &.progress--tired{
+                      background: #f63c1a;
+                    }
+                    &.progress--working{
+                         background: #f89923;
+                    }
+                    &.progress--cycle{
+                         background: #f3ac12;
+                    }
+                    &.progress--breakdown{
+                        background: #adf71e;
+                    }
+                }
+            }
+
+           
+        } 
+
+    }
+}
+
+
+#title{
+    position: absolute;
+    top:25px;
+    left:0;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px 20px #fff
+}
+
+#online{
+    padding: 15px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 18px;
+    label{
+        cursor: pointer;
+    }
+    span{
+        position: relative;
+        display: inline-block;
+        padding-left: 26px;
+        margin-right: 20px;
+        &:before{
+            content:"";
+            position: absolute;
+            top:50%;
+            left:0;
+            width:16px;
+            height:16px;
+            margin-top: -8px;
+            border-radius: 50%;
+            background:#606575;
+        }
+    }
+    input{
+        display: none;    
+        &:checked +span:before{
+            background:#22ca3f;
+        }
+    }
+
+}
+
+.pie {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    transform: rotate(-90deg);
+}
+
+svg {
+    background:transparent;
+    border-radius: 50%;
+    border:2px solid #272c34;
+}
+
+circle {
+    fill: transparent;
+    stroke:#33af2a;
+    stroke-width: 32;
 }
 

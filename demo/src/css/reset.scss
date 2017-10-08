@@ -1,58 +1,94 @@
-
 @charset "utf-8";
 
-html{
+html {
 
-  color: #000;
-  background: #fff;
-  overflow-y: scroll;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
- 
+    color: #000;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
+
 html * {
-  outline: none;
-  -webkit-text-size-adjust: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 html,
 body {
-  font-family: sans-serif;
-  height: 100%;
-  width:100%;
-  // overflow:hidden;
+    font-family: sans-serif;
+    height: 100%;
+    width: 100%; // overflow:hidden;
 }
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,
-th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-  margin: 0;
-  padding: 0;
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+hr,
+button,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    margin: 0;
+    padding: 0;
 }
+
 input,
 select,
 textarea {
-  font-size: 100%;
+    font-size: 100%;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 fieldset,
 img {
-  border: 0;
+    border: 0;
 }
 
 abbr,
 acronym {
-  border: 0;
-  font-variant: normal;
+    border: 0;
+    font-variant: normal;
 }
 
 del {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
+
 address,
 caption,
 cite,
@@ -62,63 +98,100 @@ em,
 i,
 th,
 var {
-  font-style: normal;
-  font-weight: 500;
+    font-style: normal;
+    font-weight: 500;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 caption,
 th {
-  text-align: left;
+    text-align: left;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-size: 100%;
-  font-weight: 500;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: 500;
 }
+
 q:before,
 q:after {
-  content: '';
+    content: '';
 }
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
 }
+
 sup {
-  top: -0.5em;
+    top: -0.5em;
 }
+
 sub {
-  bottom: -0.25em;
+    bottom: -0.25em;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 ins,
 a,
 a:active,
 a:visited,
-a:link{
-  text-decoration: none;
+a:link {
+    text-decoration: none;
 }
-.clearfix:after{
+
+.clearfix:after {
     display: table;
     clear: both;
     content: "";
-    visibility: hidden;;
+    visibility: hidden;
+    ;
     height: 0;
 }
-body{
-  height:100%;
-  font-family: "Microsoft YaHei";
+
+body {
+    height: 100%;
+    font-family: "Microsoft YaHei";
 }
 
+
+::-webkit-scrollbar {
+    width: 13px;
+    height: 13px;
+    background-color: rgba(37, 68, 113, 0.85);
+    border-radius: 10px;
+}
+
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: rgba(37, 68, 113, 0.85);
+}
+
+
+/*定义滑块 内阴影+圆角*/
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #8748ff;
+    background: linear-gradient(#a430f2, #824dff);
+}

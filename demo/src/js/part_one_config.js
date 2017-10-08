@@ -1,6 +1,7 @@
 /*用户增长趋势配置*/
 export const USER_GROW_TREND = {
     title: {
+        top: "5%",
         text: '用户增长趋势',
         left: "center",
         textStyle: {
@@ -12,7 +13,7 @@ export const USER_GROW_TREND = {
         top: "30%",
         left: "8%",
         right: "0%",
-        bottom: "10%",
+        bottom: "15%",
     },
     xAxis: {
         type: 'category',
@@ -85,6 +86,7 @@ export const USER_GROW_TREND = {
 /*激活设备趋势配置*/
 export const ACTIVATE_DEVICE_TREND = {
     title: {
+        top:"5%",
         text: '激活设备趋势',
         left: "center",
         textStyle: {
@@ -118,7 +120,7 @@ export const ACTIVATE_DEVICE_TREND = {
     },
     grid: {
         top: "30%",
-        bottom: "10%",
+        bottom: "15%",
         left: "8%",
         right: "0%"
     },
@@ -365,7 +367,7 @@ export var WORKING_RATE = function(chart,data) {
                 color: "#fff",
                 fontSize: 20
             },
-            top: "5%"
+            top: "5%",
         },
         series: PIE_LIST
     }
@@ -377,6 +379,7 @@ export var ACTIVATE_RATE = function(data){
         title: {
             text: '激活比例',
             left: "center",
+            top: "5%",
             textStyle: {
                 color: "#fff",
                 fontSize: 20
@@ -471,6 +474,7 @@ export const IMPORT_RATE = {
     title: {
         text: '近半年设备进货率',
         left: "center",
+        top: "5%",
         textStyle: {
             color: "#fff",
             fontSize: 20
@@ -502,7 +506,7 @@ export const IMPORT_RATE = {
         indicator: [
         ],
         center: ['50%', '60%'],
-        radius: 88
+        radius: 78
     },
     series: [{
         type: 'radar',

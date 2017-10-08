@@ -1,6 +1,7 @@
 import $ from "jquery"
 import echarts from 'echarts'
 import Mock from 'mockjs'
+import {$$,$id} from './util.js'
 
 import '../css/reset.scss'
 import '../css/part_one.scss'
@@ -57,11 +58,11 @@ Mock.mock('/getChartData2', {
 $(function() {
  
 
-    const USER_GROW_TREND_CHART = echarts.init(document.querySelector("#userGrowTrend"));
-    const ACTIVATE_DEVICE_TREND_CHART = echarts.init(document.querySelector("#activateDeviceTrend"));
-    const WORKING_RATE_CHART = echarts.init(document.querySelector("#workingRate"));
-    const ACTIVATE_RATE_CHART = echarts.init(document.querySelector("#activateRate"));
-    const IMPORT_RATE_CHART = echarts.init(document.querySelector("#importRate"));
+    const USER_GROW_TREND_CHART = echarts.init($id("userGrowTrend"));
+    const ACTIVATE_DEVICE_TREND_CHART = echarts.init($id("activateDeviceTrend"));
+    const WORKING_RATE_CHART = echarts.init($id("workingRate"));
+    const ACTIVATE_RATE_CHART = echarts.init($id("activateRate"));
+    const IMPORT_RATE_CHART = echarts.init($id("importRate"));
 
 
     USER_GROW_TREND_CHART.setOption(USER_GROW_TREND);

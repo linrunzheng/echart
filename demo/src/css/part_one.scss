@@ -6,7 +6,8 @@ body,
 }
 
 #device-manage_content {
-    padding-top: 50px;
+    padding-top: 80px;
+    padding-bottom: 25px;
     box-sizing: border-box;
     background: url('../img/bg.png') no-repeat center/cover; 
     overflow: hidden;
@@ -15,7 +16,16 @@ body,
     }
 }
 
-
+#title{
+    position: absolute;
+    top:25px;
+    left:0;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    text-shadow: 5px 5px 20px #fff
+}
 
 .content_left {
     width: 46%;
@@ -40,10 +50,11 @@ body,
 .chart_container {
     box-sizing: border-box;
     padding: 2%;
-    border: 2px solid red;
     .chart_content {
         width: 100%;
         height: 100%;
+        box-shadow:0 0 8px rgba(0,173,255,0.8) inset;
+        border-radius: 6px;
     }
 }
 
